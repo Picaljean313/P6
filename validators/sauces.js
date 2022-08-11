@@ -4,7 +4,7 @@ exports.formDataSauceToValidate = (sauce) => {
       {
         value : sauce,
         expectedType : "string",
-        maxlength : 1000
+        maxLength : 1000
       },
       {
         value : JSON.parse(sauce),
@@ -29,25 +29,25 @@ exports.jsonSauceToValidate = (sauce) => {
         value : sauce.name,
         expectedType : "string",
         mask : /^[a-zA-Z0-9\s-']+$/,
-        maxlength : 15
+        maxLength : 15
       },
       {
         value : sauce.manufacturer,
         expectedType : "string",
         mask : /^[a-zA-Z0-9\s-']+$/,
-        maxlength : 50
+        maxLength : 50
       },
       {
         value : sauce.description,
         expectedType : "string",
         mask : /^[a-zA-Z0-9\s-']+$/,
-        maxlength : 250
+        maxLength : 250
       },
       {
         value : sauce.mainPepper,
         expectedType : "string",
         mask : /^[a-zA-Z0-9\s-']+$/,
-        maxlength : 50
+        maxLength : 50
       },
       {
         value : sauce.heat,
@@ -58,6 +58,40 @@ exports.jsonSauceToValidate = (sauce) => {
       }
     ]
   }
+  catch {
+    return [
+      {
+        value : "string",
+        expectedType : "number"
+      }
+    ]
+  }
+};
+
+exports.sauceIdToValidate = (sauceId) => {
+  return [
+    {
+      value : sauceId,
+      expectedType : "string",
+      mask : /^[a-z0-9]+$/,
+      minLength : 24,
+      maxLength : 24
+    }
+  ]
+};
+
+exports.likeToValidate = (sauce) => {
+  try {
+    return [
+      {
+        value : sauce.like,
+        expectedType : "number",
+        minValue : -1,
+        maxValue : 1,
+        isInteger : true
+      }
+    ]
+  } 
   catch {
     return [
       {

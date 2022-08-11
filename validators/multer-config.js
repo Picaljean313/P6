@@ -11,8 +11,8 @@ exports.fileToValidate = (file) => {
         value : file.originalname,
         expectedType : "string",
         mask : /^[\S ]+$/,
-        minlength : 1,
-        maxlength : 100
+        minLength : 1,
+        maxLength : 100
       }
     ]
   } 

@@ -6,8 +6,8 @@ const validationRules = (thing) => {
     } catch {
       return false
     }
-    if (thing.minlength !== undefined && thing.value.length < thing.minlength) return false
-    if (thing.maxlength !== undefined && thing.value.length > thing.maxlength) return false
+    if (thing.minLength !== undefined && thing.value.length < thing.minLength) return false
+    if (thing.maxLength !== undefined && thing.value.length > thing.maxLength) return false
   }
   if (thing.expectedType === "number"){
     if (thing.isInteger === true && !Number.isInteger(thing.value)) return false

@@ -1,9 +1,9 @@
 fs = require('fs');
 
-exports.unlinkFile = (req, res, message) => {
+exports.unlinkFile = (req, res, status, message) => {
   try {
     fs.unlink(`images/${req.file.filename}`, () => {
-      res.status(400).json({ message : message });
+      res.status(status).json({ message : message });
     });
   } catch {
     error => res.status(500).json({ error })

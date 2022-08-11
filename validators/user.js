@@ -8,7 +8,9 @@ exports.connectionDataToValidate = ([email, password]) => {
     {
       value: password,
       expectedType : "string",
-      mask : /^\S{3,20}$/
+      mask : /^\S+$/,
+      minLength : 3,
+      maxLength : 20
     }
   ];
 }; 

@@ -1,6 +1,7 @@
 const express = require ('express');
 const userRoutes = require('./routes/user');
 const sauceRoutes = require('./routes/sauces');
+const functions = require('./tools/functions');
 const path = require('path');
 const mongoose = require('mongoose');
 
@@ -18,7 +19,13 @@ app.use((req, res, next) => {
 });
 
 app.use(express.json());
-
+app.use(function(error, req, res, next){
+  if (error){
+    functions.resMessage(res, 400, "Veuillez renseigner un format JSON valide");
+  } else {
+    next();
+  }
+});
 
 app.use('/api/auth', userRoutes);
 app.use('/api/sauces', sauceRoutes);
