@@ -4,7 +4,7 @@ const app = require('./app');
 const normalizePort = val => {
   const port = parseInt(val, 10);
   if (isNaN(port)) {
-    return val;
+    return false;
   }
   if (port >= 0) {
     return port;
@@ -13,8 +13,6 @@ const normalizePort = val => {
 };
 
 const port = normalizePort(process.env.PORT || '3000');
-
-app.set('port', port);
 
 const errorHandler = error => {
   if (error.syscall !== 'listen') {

@@ -28,25 +28,25 @@ exports.jsonSauceToValidate = (sauce) => {
       {
         value : sauce.name,
         expectedType : "string",
-        mask : /^[a-zA-Z0-9\s-']+$/,
+        mask : /^[a-zA-Z0-9][a-zA-Z0-9 \-']*[a-zA-Z0-9]$/,
         maxLength : 15
       },
       {
         value : sauce.manufacturer,
         expectedType : "string",
-        mask : /^[a-zA-Z0-9\s-']+$/,
+        mask : /^[a-zA-Z0-9][a-zA-Z0-9 \-']*[a-zA-Z0-9]$/,
         maxLength : 50
       },
       {
         value : sauce.description,
         expectedType : "string",
-        mask : /^[a-zA-Z0-9\s-']+$/,
+        mask : /^[a-zA-Z0-9][a-zA-Z0-9 \-']*[a-zA-Z0-9]$/,
         maxLength : 250
       },
       {
         value : sauce.mainPepper,
         expectedType : "string",
-        mask : /^[a-zA-Z0-9\s-']+$/,
+        mask : /^[a-zA-Z0-9][a-zA-Z0-9 \-']*[a-zA-Z0-9]$/,
         maxLength : 50
       },
       {
